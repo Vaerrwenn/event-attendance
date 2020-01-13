@@ -21,10 +21,13 @@
                 <% @members.each do |m| %>
                     <tr>
                         <td><%= a %></td>
-                        <td><%= m.name %></td>
+                        <td><%= link_to member_path(m), class:"text-decoration-none" do %><%= m.name %><% end %></td>
                         <td><%= m.dob %></td>
                         <td><%= m.address %></td>
-                        <td></td>
+                        <td><%= link_to edit_member_path(m), class:"btn btn-secondary btn-sm"  do %>
+                                <i class="fas fa-edit"></i>
+                            <% end %>
+                        </td>
                     </tr>
                     <% a+=1 %>
                 <% end %>

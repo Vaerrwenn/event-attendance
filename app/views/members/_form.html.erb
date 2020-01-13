@@ -1,0 +1,49 @@
+<%= simple_form_for @member do |f| %>
+
+<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <%= f.input :name, label: "Full Name: ", error: "Full Name is required!", class: "form-control" %>
+</div>
+<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <%= f.input :gender, label: "Gender: ", as: :select, collection: [['Male', 'Male'], ['Female', 'Female'], ['Others', 'Others']], error: "Gender is required!" %>
+</div>
+<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <%= f.input :dob, label: "Date of Birth: ", error: "Date of Birth is required!", html5: true, class: "form-control" %>
+</div>
+<div class="form-row col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="form-group col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <%= f.input :status, label: "Status: ", html5: true, as: :select, collection: [['Unmarried', 'Unmarried'], ['Married', 'Married'], ['Divorced', 'Divorced'], ['Widow/Widower', 'Widow/Widower']], class: "form-control" %>
+    </div>
+    <div class="form-group col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <%= f.input :occupation, label: "Occupation: ", html5: true, as: :select, collection: [['Student', 'Student'], ['College/University Student', 'College/University Student'], ['Freelancer', 'Freelancer'], ['Government Employee', 'Government'], ['Private Employee', 'Private'], ['Entrepeneur', 'Entrepeneur'], ['Others', 'Others']], class: "form-control" %>
+    </div>
+</div>
+<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <%= f.input :phone, label: "Phone Number: ", html5: true, error: "Phone must be filled with number", class: "form-control", hint: "Must be numeric." %>
+</div>
+<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <%= f.input :email, label: "Email: ", html5: true, error: "Email must be valid!", class: "form-control", hint: "Mail must be valid! Example: user@mail.com" %>
+    <div class="valid-feedback">
+</div>
+<div class="form-row col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="form-group col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <%= f.input :instagram, label: "Instagram: ", html5: true, class: "form-control" %>
+    </div>
+    <div class="form-group col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <%= f.input :line, label: "Line: ", html5: true, class: "form-control" %>
+    </div>
+</div>
+<div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <%= f.input :address, label: "Address: ", error: "Address is required!", class: "form-control" %>
+</div>
+<div class="form-row col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="form-group col-sm-8 col-md-8 col-lg-8 col-xl-8">
+        
+    </div>
+    <div class="form-group col-sm-2 col-md-2 col-lg-2 col-xl-2">
+        <%= f.button :button, "Reset", :type => 'reset', class: "btn btn-secondary" %>
+    </div>
+    <div class="form-group col-sm-2 col-md-2 col-lg-2 col-xl-2">
+        <%= f.button :submit, "Save", class: "btn btn-primary" %>
+    </div>
+</div>
+<% end %>

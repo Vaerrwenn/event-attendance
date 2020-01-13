@@ -28,8 +28,8 @@ class MembersController < ApplicationController
     def update
       @member = Member.find(params[:id])
 
-      if @article.update(article_params)
-        redirect_to @article
+      if @member.update(member_params)
+        redirect_to @member
       else
         render 'edit'
       end
@@ -37,6 +37,6 @@ class MembersController < ApplicationController
 
     private
     def member_params
-      params.require(:member).permit(:name, :dob, :address)
+      params.require(:member).permit(:name, :gender, :dob, :status, :occupation, :phone, :email, :instagram, :line, :address)
     end
 end

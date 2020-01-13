@@ -14,7 +14,14 @@ ActiveRecord::Schema.define(version: 2020_01_09_065624) do
 
   create_table "members", force: :cascade do |t|
     t.string "name"
+    t.string "gender"
     t.date "dob"
+    t.string "status"
+    t.string "occupation"
+    t.string "phone"
+    t.string "email"
+    t.string "instagram"
+    t.string "line"
     t.text "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
