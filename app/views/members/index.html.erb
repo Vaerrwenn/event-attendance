@@ -10,9 +10,11 @@
             <thead class="thead-dark">
                 <tr>
                     <th scope="col" style="width: 30px;">No.</th>
-                    <th scope="col" style="width: 350px;">Name</th>
+                    <th scope="col" style="width: 200px;">Name</th>
+                    <th scope="col" style="width: 100px;">Gender</th>
                     <th scope="col" style="width: 150px;">Date of Birth</th>
-                    <th scope="col" style="width: 500px;">Address</th>
+                    <th scope="col" style="width: 200px;">Created At</th>
+                    <th scope="col" style="width: 200px;">Updated At</th>
                     <th scope="col" style="width: 100px;">Action</th>
                 </tr>
             </thead>
@@ -22,8 +24,10 @@
                     <tr>
                         <td><%= a %></td>
                         <td><%= link_to member_path(m), class:"text-decoration-none" do %><%= m.name %><% end %></td>
-                        <td><%= m.dob %></td>
-                        <td><%= m.address %></td>
+                        <td><%= m.gender %></td>
+                        <td><%= m.dob.strftime('%d-%m-%Y') %></td>
+                        <td><%= m.created_at.strftime('%d-%m-%Y %H.%M.%S') %></td>
+                        <td><%= m.updated_at.strftime('%d-%m-%Y %H.%M.%S') %></td>
                         <td><%= link_to edit_member_path(m), class:"btn btn-secondary btn-sm"  do %>
                                 <i class="fas fa-edit"></i>
                             <% end %>
