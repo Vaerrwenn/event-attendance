@@ -1,24 +1,26 @@
-# README
+# Event Attendance Application (EAA)
+A web application to manage event attendee and the event. Made with Rails. This is just a personal project for me to expand my Rails's knowledge and skill.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirements
+* A PC or something equivalent
+* A text editor
+* Ruby 2.5.5 (or newer)
+* Rails 5.2.4
+* SQLite 3 (Will probably change to PostgreSQL sometime later in the future)
 
-Things you may want to cover:
+## Installation
+1. Clone or Download the files.
+2. Open the folder/workspace with text editor.
+3. Run `bundler install` with your console command in the workspace/folder's directory.
+4. Run `rails db:migrate
 
-* Ruby version
+## Support
+You may look for documentations online or other sites or open an issue. These may help:
+* [Rails Documentation](https://guides.rubyonrails.org/)
+* [Ruby Documentation](https://ruby-doc.org/)
 
-* System dependencies
+## Contributing
+Pull Requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Future Ideas
+Nope. Still trying to finish the application.
