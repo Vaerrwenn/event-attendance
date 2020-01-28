@@ -11,7 +11,7 @@ class CreateMembers < ActiveRecord::Migration[5.2]
       t.string :instagram
       t.string :line
       t.text :address
-      
+      t.references :event
       t.timestamps
     end
   end
