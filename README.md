@@ -12,7 +12,7 @@ A web application to manage event attendee and the event. Made with Rails. This 
 1. Clone or Download the files.
 2. Open the folder/workspace with text editor.
 3. Run `bundler install` with your console command in the workspace/folder's directory.
-4. Run `rails db:migrate
+4. Run `rails db:migrate`
 
 ## Support
 You may look for documentations online or other sites or open an issue. These may help:
