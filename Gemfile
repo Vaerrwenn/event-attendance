@@ -31,6 +31,9 @@ gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 #gem "font-awesome-rails"
 gem 'font-awesome-sass', '~> 5.12.0'
+#pagination
+#gem 'will_paginate', '~> 3.1.0'
+gem 'kaminari'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
