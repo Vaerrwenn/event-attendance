@@ -7,11 +7,37 @@
 
     <div class="col-12" style="padding-left: 15px; padding-right: 15px; padding-top: 10px;">
         <table class="table table-striped table-hover table-bordered table-sm">
-            <thead class="thead-dark">
-            
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col" style="width: 30px;">No.</th>
+                    <th scope="col" style="width: 200px;">Event's Name</th>
+                    <th scope="col" style="width: 100px;">Date</th>
+                    <th scope="col" style="width: 100px;">Time</th>
+                    <th scope="col" style="width: 200px;">Location</th>
+                    <th scope="col" style="width: 80px;">Total Attendees</th>
+                    <th scope="col" style="width: 5px;">Action</th>
+                </tr>
             </thead>
             <tbody>
-            
+            <% a = 1 %>
+            <% @events.each do |e| %>
+                <tr>
+                    <td><%= a %></td>
+                    <td><%= link_to  event_path(e), class:"text-decoration-none" do %><%= e.name %> <% end %></td>
+                    <td><%= e.start_time.strftime('%d-%m-%Y') %> - <%= e.end_time.strftime('%d-%m-%Y') %></td>
+                    <td><%= e.start_time.strftime('%H.%M') %> - <%= e.end_time.strftime('%H.%M') %></td>
+                    <td><%= e.location %></td>
+                    <td><%= e.attendance_num %></td>
+                    <td><%= link_to edit_event_path(e), class:"btn btn-secondary btn-sm"  do %>
+                                <i class="fas fa-edit"></i> 
+                            <% end %>
+                            <%= link_to event_path(e), method: :delete, data: { confirm: 'Are you sure?'},
+                                class:"btn btn-secondary btn-sm" do %>
+                                <i class="fas fa-user-minus"></i>
+                            <% end %>
+                    </td>
+                </tr>
+            <% end %>
             </tbody>
         </table>
     </div>

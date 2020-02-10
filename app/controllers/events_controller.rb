@@ -4,11 +4,21 @@ class EventsController < ApplicationController
     end
 
     def new
-      @events = Event.new
+      @event = Event.new
+    end
+
+    def show
+      @event = Event.find(params[:id])
     end
 
     def create
-      @events = Event.new(event_params)
+      @event = Event.new(event_params)
+
+      if @event.save
+        redirect_to @event
+      else
+        render 'new'
+      end 
     end
 
     private
