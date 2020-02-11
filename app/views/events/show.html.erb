@@ -1,0 +1,51 @@
+<%= render 'layouts/header' %>
+
+<div class="container justify-content-center" style="margin-top: 10px; padding: 10px; width: 50%;">
+    <div class="row">
+        <div class="col-12">
+            <h4>
+                <b><%= @event.name %></b>
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            Start Time
+        </div>
+        <div class="col-10">
+            : <%= @event.start_time.strftime('%d-%b-%Y %H.%M %:z') %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            End Time
+        </div>
+        <div class="col-10">
+            : <%= @event.end_time.strftime('%d-%b-%Y %H.%M %:z') %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            Location
+        </div>
+        <div class="col-10">
+            : <%= @event.location %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            Description
+        </div>
+        <div class="col-10">
+            : <%= @event.description %>
+        </div>
+    </div>
+    <div class="row" style="padding-top: 10px;">
+        <div class="col-10">
+            <%= link_to  "See Event Attendants", events_path, class:"btn btn-outline-primary" %>
+        </div>
+        <div class="col-2" style="padding-left: 50px;">
+            <%= link_to "Back", events_path, class:"btn btn-outline-secondary" %>
+        </div>
+    </div>
+</div>
