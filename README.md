@@ -24,5 +24,6 @@ You may look for documentations online or other sites or open an issue. These ma
 Pull Requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## Future Ideas
+- Search function for Members and Events
 - Notification (for birthdays or upcoming events)
 - Dashboard (still need ideas)
