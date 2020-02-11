@@ -18,9 +18,11 @@ A web application to manage event attendee and the event. Made with Rails. This 
 You may look for documentations online or other sites or open an issue. These may help:
 * [Rails Documentation](https://guides.rubyonrails.org/)
 * [Ruby Documentation](https://ruby-doc.org/)
+* Open an issue to ask me directly 
 
 ## Contributing
 Pull Requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## Future Ideas
-Nope. Still trying to finish the application.
+- Notification (for birthdays or upcoming events)
+- Dashboard (still need ideas)
