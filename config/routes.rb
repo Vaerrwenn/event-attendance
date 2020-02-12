@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :members
-  resources :events
-  
+  resources :events do
+    collection do
+      get 'search'
+    end
+  end
+    
   root 'welcome#index'
 end

@@ -1,6 +1,18 @@
 class MembersController < ApplicationController
     def index
       @members = Member.all
+
+      @search = params["search"]
+      if @search.present?
+        @name = @search["name"]
+        @members = Member.where("name LIKE ?", "%#{@name}%")
+        if @members.blank?
+          @member_return = "empty"
+        # elsif @name.present? == 'true'
+        # else
+        #   @members
+        end
+      end
     end
 
     def show
