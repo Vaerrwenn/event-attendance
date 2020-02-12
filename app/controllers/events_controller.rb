@@ -1,9 +1,22 @@
 class EventsController < ApplicationController
     def index
       @events = Event.all
+      @search = params["search"]
+
+      if @search.present?
+        @name = @search["name"]
+        @events = Event.where("name LIKE ?", "%#{@name}%")
+        if @events.blank?
+          @event_return = "empty"
+          # @events = ["No data found"]
+        # else
+          
+        end
+      end
     end
 
     def new
+      @screen_mode = "add"
       @event = Event.new
     end
 
@@ -22,6 +35,7 @@ class EventsController < ApplicationController
     end
 
     def edit
+      @screen_mode = "edit"
       @event = Event.find(params[:id])
     end
 
@@ -47,4 +61,7 @@ class EventsController < ApplicationController
       params.require(:event).permit(:name, :start_time, :end_time, :location, :description)
     end
 
+    # def search_params
+    #   params.require(:event).permit(:name)
+    # end
 end

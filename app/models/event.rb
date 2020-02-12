@@ -4,4 +4,8 @@ class Event < ApplicationRecord
     validates :end_time, presence: true, numericality: { greater_than: :start_time}
     validates :location, presence: true
     #validates :attendance_num, numericality: { only_integer: true }
+
+    searchable do
+        text :name
+    end
 end

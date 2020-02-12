@@ -1,44 +1,60 @@
 <%= render 'layouts/header' %>
 
 <div class="container-fluid">
-    <div class="col-12" style="padding-top: 5px;">
-        <%= link_to new_event_path, class:"btn btn-primary" do %><i class="fas fa-plus"></i><% end %>
+    <div class="row">
+        <div class="col-3" style="padding-top: 15px;">
+            <%= render 'search' %>
+        </div>
     </div>
-
-    <div class="col-12" style="padding-left: 15px; padding-right: 15px; padding-top: 10px;">
-        <table class="table table-striped table-hover table-bordered table-sm">
-            <thead class="thead-light">
-                <tr>
-                    <th scope="col" style="width: 30px;">No.</th>
-                    <th scope="col" style="width: 200px;">Event's Name</th>
-                    <th scope="col" style="width: 100px;">Date</th>
-                    <th scope="col" style="width: 100px;">Time</th>
-                    <th scope="col" style="width: 200px;">Location</th>
-                    <th scope="col" style="width: 80px;">Total Attendees</th>
-                    <th scope="col" style="width: 5px;">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-            <% a = 1 %>
-            <% @events.each do |e| %>
-                <tr>
-                    <td><%= a %></td>
-                    <td><%= link_to  event_path(e), class:"text-decoration-none" do %><%= e.name %> <% end %></td>
-                    <td><%= e.start_time.strftime('%d-%m-%Y') %> - <%= e.end_time.strftime('%d-%m-%Y') %></td>
-                    <td><%= e.start_time.strftime('%H.%M') %> - <%= e.end_time.strftime('%H.%M') %></td>
-                    <td><%= e.location %></td>
-                    <td><%= e.attendance_num %></td>
-                    <td><%= link_to edit_event_path(e), class:"btn btn-secondary btn-sm"  do %>
-                                <i class="fas fa-edit"></i> 
-                            <% end %>
-                            <%= link_to event_path(e), method: :delete, data: { confirm: 'Are you sure?'},
-                                class:"btn btn-secondary btn-sm" do %>
-                                <i class="fas fa-trash"></i>
-                            <% end %>
-                    </td>
-                </tr>
-            <% end %>
-            </tbody>
-        </table>
+    <div class="row">
+        <div class="col-12" style="padding-top: 15px;">
+            <%= link_to new_event_path, class:"btn btn-primary" do %><i class="fas fa-plus"></i><% end %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12" style="padding-left: 15px; padding-right: 15px; padding-top: 10px;">
+            <table class="table table-striped table-hover table-bordered table-sm">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col" style="width: 30px;">No.</th>
+                        <th scope="col" style="width: 200px;">Event's Name</th>
+                        <th scope="col" style="width: 100px;">Date</th>
+                        <th scope="col" style="width: 100px;">Time</th>
+                        <th scope="col" style="width: 200px;">Location</th>
+                        <th scope="col" style="width: 80px;">Total Attendees</th>
+                        <th scope="col" style="width: 5px;">Action</th>
+                    </tr>
+                </thead>
+                <% if @event_return == "empty" %>
+                    <tbody>
+                        <tr>
+                            <td colspan="7"><b>No data found.</b></td>
+                        </tr>
+                    </tbody>
+                <% else %>
+                    <tbody>
+                    <% a = 1 %>
+                    <% @events.each do |e| %>
+                        <tr>
+                            <td><%= a %></td>
+                            <td><%= link_to  event_path(e), class:"text-decoration-none" do %><%= e.name %> <% end %></td>
+                            <td><%= e.start_time.strftime('%d-%m-%Y') %> - <%= e.end_time.strftime('%d-%m-%Y') %></td>
+                            <td><%= e.start_time.strftime('%H.%M') %> - <%= e.end_time.strftime('%H.%M') %></td>
+                            <td><%= e.location %></td>
+                            <td><%= e.attendance_num %></td>
+                            <td><%= link_to edit_event_path(e), class:"btn btn-secondary btn-sm"  do %>
+                                        <i class="fas fa-edit"></i> 
+                                    <% end %>
+                                    <%= link_to event_path(e), method: :delete, data: { confirm: 'Are you sure?'},
+                                        class:"btn btn-secondary btn-sm" do %>
+                                        <i class="fas fa-trash"></i>
+                                    <% end %>
+                            </td>
+                        </tr>
+                    <% end %>
+                    </tbody>
+                <% end %>
+            </table>
+        </div>
     </div>
 </div>

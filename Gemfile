@@ -34,6 +34,7 @@ gem 'font-awesome-sass', '~> 5.12.0'
 #pagination
 #gem 'will_paginate', '~> 3.1.0'
 gem 'kaminari'
+gem 'sunspot_rails'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

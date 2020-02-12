@@ -1,0 +1,15 @@
+<%= simple_form_for :search, url: events_path, method: "GET", html: {class: "form-inline"} do |f| %>
+<div class="row">
+    <div class="col-2" style="padding-top: 5px;">
+        Search: 
+    </div>
+    <div class="col-7">
+        <%= f.input :name, required: false, label: false, input_html: {value: ""} %>
+    </div>
+    <div class="col-3">
+        <%= f.button :button, class: "btn btn-primary" do %>
+            <i class="fas fa-search"></i>
+        <% end %>
+    </div>
+</div>
+<% end %>
