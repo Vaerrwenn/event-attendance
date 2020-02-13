@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
   <%= link_to welcome_index_path, class: "navbar-brand" do %>
       <b style='font-family: "Trebuchet MS", Helvetica, sans-serif'>EAA</b>
   <% end %>
@@ -8,6 +8,14 @@
         <%= link_to "Events", {controller: 'events'}, class: "nav-item nav-link active" %>
       </div>
     </div>
+    <div class="collapse navbar-collapse float-right" style="margin-left: 77%;">
+      <ul class="navbar-nav">
+        <li class="nav-item nav-link active">
+          Login
+        </li>
+        <li class="nav-item nav-link active">
+          Register
+        </li>
+      </ul>
+    </div>
 </nav>
-
-<%# Add event later%>
