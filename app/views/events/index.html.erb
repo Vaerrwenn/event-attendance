@@ -16,7 +16,7 @@
             <table class="table table-striped table-hover table-bordered table-sm">
                 <thead class="thead-light">
                     <tr>
-                        <th scope="col" style="width: 30px;">No.</th>
+                        <th scope="col" style="width: 30px;" class="text-center">No.</th>
                         <th scope="col" style="width: 200px;">Event's Name</th>
                         <th scope="col" style="width: 100px;">Date</th>
                         <th scope="col" style="width: 100px;">Time</th>
@@ -36,8 +36,8 @@
                     <% a = 1 %>
                     <% @events.each do |e| %>
                         <tr>
-                            <td><%= a %></td>
-                            <td><%= link_to  event_path(e), class:"text-decoration-none" do %><%= e.name %> <% end %></td>
+                            <td class="text-center"><%= a %></td>
+                            <td><%= link_to  event_path(e), class:"text-decoration-none text-capitalize" do %><%= e.name %> <% end %></td>
                             <td><%= e.start_time.strftime('%d-%m-%Y') %> - <%= e.end_time.strftime('%d-%m-%Y') %></td>
                             <td><%= e.start_time.strftime('%H.%M') %> - <%= e.end_time.strftime('%H.%M') %></td>
                             <td><%= e.location %></td>

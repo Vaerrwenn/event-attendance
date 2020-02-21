@@ -13,17 +13,17 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12" style="padding-left: 15px; padding-right: 15px; padding-top: 10px;">
+        <div class="col-12" style="padding-left: 30px; padding-right: 30px; padding-top: 15px;">
             <table class="table table-striped table-hover table-bordered table-sm">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col" style="width: 30px;">No.</th>
+                        <th scope="col" style="width: 10px;" class="text-center">No.</th>
                         <th scope="col" style="width: 200px;">Name</th>
                         <th scope="col" style="width: 100px;">Gender</th>
                         <th scope="col" style="width: 150px;">Date of Birth</th>
-                        <th scope="col" style="width: 200px;">Created At</th>
-                        <th scope="col" style="width: 200px;">Updated At</th>
-                        <th scope="col" style="width: 100px;">Action</th>
+                        <th scope="col" style="width: 100px;">Created At</th>
+                        <th scope="col" style="width: 100px;">Updated At</th>
+                        <th scope="col" style="width: 50px;">Action</th>
                     </tr>
                 </thead>
                 <% if @member_return == "empty" %>
@@ -39,10 +39,10 @@
                         <% a = 1 %>
                         <% @members.each do |m| %>
                             <tr>
-                                <td><%= a %></td>
-                                <td><%= link_to member_path(m), class:"text-decoration-none" do %><%= m.name %><% end %></td>
+                                <td class="text-center"><%= a %></td>
+                                <td class="text-capitalize"><%= link_to member_path(m), class:"text-decoration-none" do %><%= m.name %><% end %></td>
                                 <td><%= m.gender %></td>
-                                <td><%= m.dob.strftime('%d-%m-%Y') %></td>
+                                <td><%= m.dob.strftime('%d-%B-%Y') %></td>
                                 <td><%= m.created_at.strftime('%d-%m-%Y %H.%M.%S') %></td>
                                 <td><%= m.updated_at.strftime('%d-%m-%Y %H.%M.%S') %></td>
                                 <td><%= link_to edit_member_path(m), class:"btn btn-secondary btn-sm"  do %>
