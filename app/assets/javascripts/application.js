@@ -17,3 +17,16 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+
+function phoneNumCheck(e) {
+    // if use onkeypress
+    // var charCode = (event.which) ? event.which : event.keyCode
+    // if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+    //     return false;
+    // }
+    var input = e.key
+    var regex = /([^\d+])/
+    if (regex.test(input) && e.which != 8) {
+        e.preventDefault()
+    }
+}
