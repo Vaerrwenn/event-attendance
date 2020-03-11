@@ -4,9 +4,9 @@ A web application to manage event attendee and the event. Made with Rails. This 
 ## Requirements
 * A PC or something equivalent
 * A text editor
-* Ruby 2.5.5 (or newer)
-* Rails 5.2.4 (or newer)
-* SQLite 3 (Will probably change to PostgreSQL sometime later in the future)
+* Ruby 2.5.5
+* Rails 5.2.4
+* PostgreSQL 11.3
 
 ## Installation
 1. Clone or Download the files.
